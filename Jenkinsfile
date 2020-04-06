@@ -1,8 +1,12 @@
 pipeline {
-  docker {
+  agent {
+    docker {
       label "docker && linux" 
       image "python:3.7"
+      pwd "."
     }
+ }
+  
   stages {
     stage('build') {
       steps {
